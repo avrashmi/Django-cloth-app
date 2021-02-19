@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+products
+{% endblock %}
+
+   {% block content %}   
+   {{ block.super }}  
+
+        {% for product in object_list %}
+         <div class="col-4">
+            <div class="card" style="width: 18rem;">
+            <img src="{{ product.image.url}}" class="cart-img-top" alt=''>
+            <div class="cart-body">
+                <h5 class="cart-title">{{product.name}}</h5>
+                <p class="cart-text">{{product.description}}</p>
+                <a href="{{product.get_absolute_url}}" class="btn btn-primary">Detail</a>
+            </div>
+            </div>
+            </div>
+    
+
+        {% endfor %}
+        
+    
+  {% endblock %}
